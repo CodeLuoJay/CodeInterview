@@ -616,6 +616,40 @@
 </code></pre>
 <p><strong>volatile &#x4FEE;&#x9970;&#x7B26;</strong></p>
 <p>volatile &#x4FEE;&#x9970;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x5728;&#x6BCF;&#x6B21;&#x88AB;&#x7EBF;&#x7A0B;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x90FD;&#x5F3A;&#x5236;&#x4ECE;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x4E2D;&#x91CD;&#x65B0;&#x8BFB;&#x53D6;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x5F53;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x5F3A;&#x5236;&#x7EBF;&#x7A0B;&#x5C06;&#x53D8;&#x5316;&#x503C;&#x56DE;&#x5199;&#x5230;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x3002;&#x8FD9;&#x6837;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x523B;&#xFF0C;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x603B;&#x662F;&#x770B;&#x5230;&#x67D0;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x503C;&#x3002;<strong>&#x4E00;&#x4E2A; volatile &#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x53EF;&#x80FD;&#x662F; null</strong>&#x3002;</p>
+<h3 id="java-&#x8FD0;&#x7B97;&#x7B26;">Java &#x8FD0;&#x7B97;&#x7B26;</h3>
+<p>&#x8FD0;&#x7B97;&#x7B26;&#x662F;&#x6BCF;&#x95E8;&#x8BED;&#x8A00;&#x7684;&#x57FA;&#x672C;&#x529F;&#xFF0C;&#x5728;&#x6821;&#x62DB;&#x9762;&#x8BD5;&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x7B14;&#x8BD5;&#x9898;&#x548C;&#x9762;&#x8BD5;&#x9898;&#x4F1A;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x672C;&#x6587;&#x4E2D;&#x53EA;&#x4F1A;&#x9488;&#x5BF9;&#x5E38;&#x8003;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x8FDB;&#x884C;&#x603B;&#x7ED3;</p>
+<ul>
+<li>&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;&#x4E2D;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x81EA;&#x589E;&#x548C;&#x81EA;&#x51CF;&#x8FD0;&#x7B97;&#x7B26;</li>
+<li>&#x4F4D;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x6309;&#x4F4D;&#x4E0E;&#x3001;&#x6309;&#x4F4D;&#x6216;&#x3001;&#x6309;&#x4F4D;&#x5F02;&#x6216;&#x3001;&#x6309;&#x4F4D;&#x53D6;&#x53CD;&#xFF0C;&#x6309;&#x4F4D;&#x5DE6;&#x79FB;&#x3001;&#x6309;&#x4F4D;&#x53F3;&#x79FB;&#x3001;&#x6309;&#x4F4D;&#x53F3;&#x79FB;&#x8865;&#x96F6;&#x64CD;&#x4F5C;&#x7B26;</li>
+<li>instanceof &#x8FD0;&#x7B97;&#x7B26;</li>
+<li>&#x8D4B;&#x503C;&#x8FD0;&#x7B97;&#x7B26;</li>
+</ul>
+<p>&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;</p>
+<p><img src="https://images2015.cnblogs.com/blog/1001990/201610/1001990-20161025144757265-1724289762.png" alt="img"></p>
+<p>&#x81EA;&#x589E;&#x8FD0;&#x7B97;&#x7B26;</p>
+<blockquote>
+<h4 id="&#x7ECF;&#x5178;&#x7684;&#x81EA;&#x589E;&#x8FD0;&#x7B97;&#x9898;&#x76EE;">&#x7ECF;&#x5178;&#x7684;&#x81EA;&#x589E;&#x8FD0;&#x7B97;&#x9898;&#x76EE;</h4>
+</blockquote>
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IncreaseVariableExample</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+            j = j++;
+        }    
+        System.out.println(j);
+    }
+}
+</code></pre>
+<p>&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E0D;&#x5C11;&#x4EBA;&#x8BA4;&#x4E3A;&#x8F93;&#x51FA;&#x662F;100&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x8F93;&#x51FA;&#x662F;0&#xFF1B;&#x8FD9;&#x5176;&#x5B9E;&#x5C31;&#x6D89;&#x53CA;&#x5230;JVM&#x76F8;&#x5173;&#x7684;&#x77E5;&#x8BC6;&#x4EE5;&#x53CA;&#x5B57;&#x8282;&#x7801;&#x76F8;&#x5173;&#x6307;&#x4EE4;&#xFF0C;</p>
+<p>&#x7ECF;&#x8FC7;&#x53CD;&#x7F16;&#x8BD1;&#x5F97;&#x5230;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x9488;&#x5BF9;<code>j = j++</code>&#x8FD9;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#x8BF4;&#x660E;&#x4E0B;&#x9762;&#x4E09;&#x884C;&#x5B57;&#x8282;&#x7801;</p>
+<pre><code class="lang-shell">10: iload_1    //    &#x5C06;&#x672C;&#x5730;&#x53D8;&#x91CF;j=0 &#x503C;&#x538B;&#x5165;&#x6808;&#x9876;
+11: iinc    //  &#x672C;&#x5730;&#x53D8;&#x91CF;j&#xFF08;&#x4E5F;&#x53EB;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF09;&#x81EA;&#x589E;,j=1
+14: istore_1//    &#x5C06;&#x6808;&#x9876;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#x4E5F;&#x5C31;&#x662F;j=0&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x7ED9;j&#xFF0C;&#x5982;&#x6B64;&#x5FAA;&#x73AF;100&#x6B21;&#xFF0C;j&#x6700;&#x540E;&#x7B49;&#x4E8E;0
+</code></pre>
+<blockquote>
+<p>&#x5982;&#x679C;&#x5C06;<code>j =  j++</code>&#x5206;&#x522B;&#x6539;&#x6210; <code>j = ++j</code>&#x3001;<code>j++</code>&#x3001;<code>++j</code>&#x8FD9;&#x4E09;&#x4E2A;&#x503C;&#xFF0C;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#x4F1A;&#x8F93;&#x51FA;&#x4EC0;&#x4E48;&#x7ED3;&#x679C;&#xFF1F;</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x60F3;&#x77E5;&#x9053;&#x6B63;&#x786E;&#x7684;&#x7B54;&#x6848;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x77E5;&#x4E4E;&#x4E00;&#x4F4D;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x5927;&#x4F6C;&#x7684;&#x535A;&#x6587; <a href="https://zhuanlan.zhihu.com/p/35133459" target="_blank">&#x5173;&#x4E8E;&#x81EA;&#x589E;&#x64CD;&#x4F5C;&#xFF0C;&#x4F60;&#x771F;&#x7684;&#x61C2;&#x4E86;&#x5417;&#xFF1F;</a></p>
 
                                 
                                 </section>
@@ -659,7 +693,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java基础","level":"1.2","depth":1,"next":{"title":"Java基础语法","level":"1.2.1","depth":2,"path":"JavaSE/basic/README.md","ref":"JavaSE/basic/README.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JavaSE/basic/README.md","mtime":"2020-11-02T15:25:01.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-02T15:26:17.057Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java基础","level":"1.2","depth":1,"next":{"title":"Java基础语法","level":"1.2.1","depth":2,"path":"JavaSE/basic/README.md","ref":"JavaSE/basic/README.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JavaSE/basic/README.md","mtime":"2020-11-03T15:49:05.517Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-03T15:52:58.965Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
