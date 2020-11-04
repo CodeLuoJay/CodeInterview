@@ -94,7 +94,7 @@
                 <a href="../../">
             
                     
-                    Introduction
+                    项目介绍
             
                 </a>
             
@@ -650,6 +650,54 @@
 <p>&#x5982;&#x679C;&#x5C06;<code>j =  j++</code>&#x5206;&#x522B;&#x6539;&#x6210; <code>j = ++j</code>&#x3001;<code>j++</code>&#x3001;<code>++j</code>&#x8FD9;&#x4E09;&#x4E2A;&#x503C;&#xFF0C;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#x4F1A;&#x8F93;&#x51FA;&#x4EC0;&#x4E48;&#x7ED3;&#x679C;&#xFF1F;</p>
 </blockquote>
 <p>&#x5982;&#x679C;&#x60F3;&#x77E5;&#x9053;&#x6B63;&#x786E;&#x7684;&#x7B54;&#x6848;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x77E5;&#x4E4E;&#x4E00;&#x4F4D;&#x963F;&#x91CC;&#x5DF4;&#x5DF4;&#x5927;&#x4F6C;&#x7684;&#x535A;&#x6587; <a href="https://zhuanlan.zhihu.com/p/35133459" target="_blank">&#x5173;&#x4E8E;&#x81EA;&#x589E;&#x64CD;&#x4F5C;&#xFF0C;&#x4F60;&#x771F;&#x7684;&#x61C2;&#x4E86;&#x5417;&#xFF1F;</a></p>
+<blockquote>
+<h4 id="&#x81EA;&#x51CF;&#x8FD0;&#x7B97;&#x9898;&#x76EE;">&#x81EA;&#x51CF;&#x8FD0;&#x7B97;&#x9898;&#x76EE;</h4>
+</blockquote>
+<pre><code class="lang-Java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> a =<span class="hljs-number">100</span>,b=<span class="hljs-number">50</span>,c=a---b,d=a---b;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+ }
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x9898;&#x76EE;&#x5176;&#x5B9E;&#x662F;&#x8003;&#x5BDF;&#x4E86;&#x81EA;&#x51CF;&#x8FD0;&#x7B97;&#x548C;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x8FD9;&#x4E24;&#x4E2A;&#x70B9;&#xFF0C;c&#x548C;d&#x53EF;&#x4EE5;&#x6539;&#x5199;&#x6210;<code>c = (a--)-b</code>&#xFF0C;<code>d = (a--)-b</code></p>
+<ul>
+<li>&#x9996;&#x5148;&#x80FD;&#x786E;&#x5B9A;b=50&#xFF0C;&#x5176;&#x6B21;&#x6765;&#x8BA1;&#x7B97;c</li>
+<li><code>c = (a--)-b</code> &#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x662F;&#x8FD9;&#x6837;&#x8FC7;&#x7A0B;&#xFF0C;a&#x538B;&#x5165;&#x6808;&#xFF0C;&#x6B64;&#x65F6;a=100&#xFF0C;a&#x672C;&#x5730;&#x53D8;&#x91CF;&#x81EA;&#x51CF;&#xFF08;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;a=99&#xFF09;&#xFF0C;b&#x538B;&#x5165;&#x6808;&#x6B64;&#x65F6;b=50&#xFF0C;&#x7136;&#x540E;&#x8FD0;&#x7B97;&#x76F8;&#x51CF;&#x64CD;&#x4F5C;&#xFF0C;&#x5C06;&#x5165;&#x6808;a=100&#x548C;b=50&#x76F8;&#x51CF;&#x540E;&#x5C06;&#x64CD;&#x4F5C;&#x6570;&#x7ED3;&#x679C;&#x51FA;&#x6808;&#xFF0C;&#x5B58;&#x8FDB;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;c&#xFF0C;c=50</li>
+<li><code>d = (a--)-b</code>&#xFF0C;&#x7531;&#x4E0A;&#x4E00;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;a=99&#x7684;&#x503C;&#x538B;&#x5165;&#x6808;&#xFF0C;a&#x672C;&#x5730;&#x53D8;&#x91CF;&#x81EA;&#x51CF;&#xFF08;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;a=98&#xFF09;&#xFF0C;b&#x538B;&#x5165;&#x6808;&#xFF0C;&#x6700;&#x540E;a=99&#x548C;b=50&#x76F8;&#x51CF;&#x7684;&#x7ED3;&#x679C;&#x51FA;&#x6808;&#xFF0C;&#x5B58;&#x8FDB;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x8868;d=49</li>
+</ul>
+<blockquote>
+<p>&#x6700;&#x540E;&#x7ED3;&#x679C;&#xFF1A;98 50 50 49</p>
+</blockquote>
+<p>&#x6B64;&#x7C7B;&#x9898;&#x76EE;&#xFF0C;&#x8FD8;&#x6709;&#x6BD4;&#x8F83;&#x7EFC;&#x5408;&#x4E00;&#x70B9;&#x7684;&#x9762;&#x8BD5;&#x9898;&#xFF0C;&#x4E5F;&#x662F;&#x8003;&#x5BDF;&#x57FA;&#x672C;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7;&#x3001;&#x8FD0;&#x7B97;&#x4F18;&#x5148;&#x7EA7;&#x3001;&#x4EE5;&#x53CA;&#x81EA;&#x589E;&#x64CD;&#x4F5C;&#x7684;&#x8FC7;&#x7A0B;&#x7406;&#x89E3;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VariableIncrementSample</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;
+        i = i++;
+        <span class="hljs-keyword">int</span> j = i++;
+        <span class="hljs-keyword">int</span> k = i + ++i * i++;
+        System.out.println(<span class="hljs-string">&quot;i=&quot;</span>+i);
+        System.out.println(<span class="hljs-string">&quot;j=&quot;</span>+j);
+        System.out.println(<span class="hljs-string">&quot;k=&quot;</span>+k);
+    }
+}
+</code></pre>
+<p>&#x6309;&#x7167;&#x6211;&#x81EA;&#x5DF1;&#x7684;&#x7406;&#x89E3;&#x662F;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x7684;</p>
+<ol>
+<li><p><code>i=i++</code> &#x672C;&#x5730;&#x53D8;&#x91CF;i=1 &#x5165;&#x6808;&#xFF0C;&#x672C;&#x5730;&#x53D8;&#x91CF;i&#x81EA;&#x589E;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6808;&#x9876;&#x7684;i=1&#x7684;&#x503C;&#x5B58;&#x56DE;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x8868;i&#x4E2D;&#xFF0C;&#x6700;&#x540E;i=1</p>
+</li>
+<li><p><code>j=i++</code>&#x4E0A;&#x4E00;&#x6B65;&#x672C;&#x5730;&#x53D8;&#x91CF;i=1&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#xFF0C;&#x672C;&#x5730;&#x53D8;&#x91CF;i=1&#x538B;&#x5165;&#x6808;&#xFF0C;&#x672C;&#x5730;&#x53D8;&#x91CF;i&#x81EA;&#x589E;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6808;&#x9876;&#x7684;i=1&#x5B58;&#x56DE;&#x672C;&#x5730;&#x53D8;&#x91CF;j&#x4E2D;&#xFF0C;j=1&#xFF0C;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x8868;i=2</p>
+</li>
+<li><p><code>k=i + ++i * i++</code> &#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x8FD9;&#x4E00;&#x9898;&#x7684;&#x8003;&#x5BDF;&#x70B9;&#x6838;&#x5FC3;&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x4F18;&#x5148;&#x7EA7; &#x81EA;&#x589E;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x52A0;&#x51CF;&#x4E58;&#x9664;&#xFF0C;&#x53D8;&#x91CF;&#x5165;&#x6808;&#x64CD;&#x4F5C;&#x662F;&#x4ECE;&#x5DE6;&#x5F80;&#x540E;&#x5F00;&#x59CB;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5148;&#x628A; i &#x538B;&#x5165;&#x6808;&#xFF0C;&#x7136;&#x540E;&#x8F6E;&#x5230;++i&#xFF0C;&#x6700;&#x540E;&#x5230; i++&#xFF0C;&#x6700;&#x540E;&#x624D;&#x7B97;&#x76F8;&#x4E58;&#xFF0C;&#x76F8;&#x51CF;&#xFF0C;&#x8D4B;&#x503C;</p>
+</li>
+<li><p>&#x4E0A;&#x4E00;&#x6B65;&#x672C;&#x5730;&#x53D8;&#x91CF;i=2&#x538B;&#x5165;&#x6808;&#xFF0C;&#x7136;&#x540E;&#x5230; ++i&#xFF0C;++i&#x7684;&#x8FC7;&#x7A0B;&#x662F; &#x672C;&#x5730;&#x53D8;&#x91CF;i&#x81EA;&#x589E;&#x53D8;&#x6210; i=3&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5165;&#x6808;&#xFF0C;&#x7D27;&#x63A5;&#x7740;&#x5C31;&#x662F; i++&#xFF0C;i++&#x8FC7;&#x7A0B;&#x662F; &#x672C;&#x5730;&#x53D8;&#x91CF;i=3&#x5165;&#x6808;&#xFF0C;&#x672C;&#x5730;&#x53D8;&#x91CF;i&#x81EA;&#x589E;&#x53D8;&#x6210;4&#xFF0C;&#x81F3;&#x6B64;&#x5B8C;&#x6210;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#xFF08;&#x5373;&#x5165;&#x6808;&#x64CD;&#x4F5C;&#xFF09;</p>
+</li>
+<li><p>&#x4E0B;&#x9762;&#x5C31;&#x5F00;&#x59CB;&#x51FA;&#x6808;&#x64CD;&#x4F5C;&#xFF0C;&#x7ECF;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;k&#x7684;&#x8FD0;&#x7B97;&#x5F0F;&#x5B50;&#x53D8;&#x6210; <code>int k = 2 + 3 * 3</code>,&#x7ED3;&#x679C;&#x5F88;&#x663E;&#x7136;&#x6613;&#x89C1;&#x7B49;&#x4E8E;11</p>
+</li>
+<li><p>&#x90A3;&#x4E48;&#x8BA1;&#x7B97;&#x673A;&#x662F;&#x600E;&#x4E48;&#x8BA1;&#x7B97;&#x51FA;11&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x7B2C;&#x56DB;&#x6B65;&#x4E2D;&#xFF0C;&#x5165;&#x6808;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#xFF0C;&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x662F;3&#x3001;3&#x3001;2&#xFF0C;&#x90A3;&#x4E48;3*3&#x7684;&#x7ED3;&#x679C;&#x5F39;&#x4E0A;&#x6808;&#x9876;&#xFF0C;&#x7136;&#x540E;9+2&#x7684;&#x7ED3;&#x679C;&#x5F39;&#x4E0A;&#x6808;&#x9876;&#xFF0C;&#x6700;&#x540E;11&#x51FA;&#x6808;</p>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -677,7 +725,7 @@
 
             
                 
-                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../../" class="navigation navigation-prev " aria-label="Previous page: 项目介绍">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -693,7 +741,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java基础","level":"1.2","depth":1,"next":{"title":"Java基础语法","level":"1.2.1","depth":2,"path":"JavaSE/basic/README.md","ref":"JavaSE/basic/README.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JavaSE/basic/README.md","mtime":"2020-11-03T15:49:05.517Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-03T15:52:58.965Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java基础","level":"1.2","depth":1,"next":{"title":"Java基础语法","level":"1.2.1","depth":2,"path":"JavaSE/basic/README.md","ref":"JavaSE/basic/README.md","articles":[]},"previous":{"title":"项目介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"JavaSE/basic/README.md","mtime":"2020-11-04T15:00:35.560Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-04T15:03:50.695Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
